@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import AuctionContractJson from "./contracts/Auction.json.js";
-import AuctionFactoryContractJson from "./contracts/AuctionFactory.json.js";
+import AuctionContractJson from "./contracts/Auction.json";
+import AuctionFactoryContractJson from "./contracts/AuctionFactory.json";
 
 import getWeb3 from "./utils/getWeb3";
 import getContractInstance from './utils/getContractInstance';
