@@ -1,0 +1,59 @@
+import "LIBSNARK/sha256packed"
+
+def main(private field[4] input1, private field random1, field[2] hash1, private field[4] input2, private field random2, field[2] hash2, private field[4] input3, private field random3, field[2] hash3, private field[4] input4, private field random4, field[2] hash4, private field[4] input5, private field random5, field[2] hash5) -> (field, field):
+        h1, h2 = sha256packed(input1[0] + random1, input1[1] + random1, input1[2] + random1, input1[3] + random1)
+        field iszero1 = if input1[3] == 0 then 0 else 1 fi
+        field hash10 = hash1[0] * iszero1
+        field h1orzero = h1 * iszero1
+        field hash11 = hash1[1] * iszero1
+        field h2orzero = h2 * iszero1
+        hash10 == h1orzero
+        hash11 == h2orzero
+        h3, h4 = sha256packed(input2[0] + random2, input2[1] + random2, input2[2] + random2, input2[3] + random2)
+        field iszero2 = if input2[3] == 0 then 0 else 1 fi
+        field hash20 = hash2[0] * iszero2
+        field h3orzero = h3 * iszero2
+        field hash21 = hash2[1] * iszero2
+        field h4orzero = h4 * iszero2
+        hash20 == h3orzero
+        hash21 == h4orzero
+        h5, h6 = sha256packed(input3[0] + random3, input3[1] + random3, input3[2] + random3, input3[3] + random3)
+        field iszero3 = if input3[3] == 0 then 0 else 1 fi
+        field hash30 = hash3[0] * iszero3
+        field h5orzero = h5 * iszero3
+        field hash31 = hash3[1] * iszero3
+        field h6orzero = h6 * iszero3
+        hash30 == h5orzero
+        hash31 == h6orzero
+        h7, h8 = sha256packed(input4[0] + random4, input4[1] + random4, input4[2] + random4, input4[3] + random4)
+        field iszero4 = if input4[3] == 0 then 0 else 1 fi
+        field hash40 = hash4[0] * iszero4
+        field h7orzero = h7 * iszero4
+        field hash41 = hash4[1] * iszero4
+        field h8orzero = h8 * iszero4
+        hash40 == h7orzero
+        hash41 == h8orzero
+        h9, h10 = sha256packed(input5[0] + random5, input5[1] + random5, input5[2] + random5, input5[3] + random5)
+        field iszero5 = if input5[3] == 0 then 0 else 1 fi
+        field hash50 = hash5[0] * iszero5
+        field h9orzero = h9 * iszero5
+        field hash51 = hash5[1] * iszero5
+        field h10orzero = h10 * iszero5
+        hash50 == h9orzero
+        hash51 == h10orzero
+
+        field max = input1[3]
+        field index = 1
+        index = if max < input2[3] then 2 else index fi
+        max = if max < input2[3] then input2[3] else max fi
+
+        index = if max < input3[3] then 3 else index fi
+        max = if max < input3[3] then input3[3] else max fi
+
+        index = if max < input4[3] then 4 else index fi
+        max = if max < input4[3] then input4[3] else max fi 
+
+        index = if max < input5[3] then 5 else index fi
+        max = if max < input5[3] then input5[3] else max fi
+
+        return index, max
