@@ -25,12 +25,12 @@ http_uri=http://host.docker.internal:7545
 ```
 
 There are several fields you may want to change:
-| Field                  | Definition                                                  |
-| :----------------------| :---------------------------------------------------------: |
-| service_port           | Port that executor service listening to                     |
-| http_uri               | Http uri for chain provider type `http`.                    |
-| account_public_key     | execution account public key.                               |
-| account_private_key    | execution account private key.                              |
+| field               |                definition                |
+|---------------------|:----------------------------------------:|
+| service_port        |  Port that executor service listening to |
+| http_uri            | Http uri for chain provider type `http`. |
+| account_public_key  | execution account public key.            |
+| account_private_key |      execution account private key.      |
 
 Make sure to change the account public/private key to your own to ensure executor has enough balance to interact with contract.
 
