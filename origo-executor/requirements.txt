@@ -1,5 +1,5 @@
 Flask==1.0.2
-web3==4.2.0
+web3==5.4.0
 Flask-RESTful==0.3.7
 gevent==1.4.0
 greenlet==0.4.15

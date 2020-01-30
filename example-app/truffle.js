@@ -1,5 +1,5 @@
-const path = require("path");
-const HDWalletProvider = require("truffle-hdwallet-provider");
+const path = require('path')
+const HDWalletProvider = require('truffle-hdwallet-provider')
 const mnemonic = "use your own test account here!!!!";
 
 module.exports = {
@@ -7,17 +7,28 @@ module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 7545,
+      port: 6622,
       network_id: "*" // Match any network id
     },
     origo: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://rpc.originis.origo.network")
+        return new HDWalletProvider(mnemonic, "https://rpc.medietas.origo.network")
+        // return new HDWalletProvider(mnemonic, "http://127.0.0.1:6622")
+        // return new HDWalletProvider(mnemonic, "http://127.0.0.1:7545")
       },
       // provider: function() {
       //   return new HDWalletProvider(mnemonic, "http://127.0.0.1:7545")
       // },
-      network_id: "27" // Match any network id
+      network_id: "*", // Match any network id
+      gas: 3000000
     }
-  }
+  },
+  // compilers: {
+  //   solc: {
+  //     version: "0.5.0",
+  //   settings: {
+  //      evmVersion: "byzantium" // Default: "petersburg"
+  //    }	
+  //   }
+  //  }
 };

@@ -207,7 +207,8 @@ class EthInterface(ChainInterface):
         assert contract_abi is not None
         target_contract = self.__web3.eth.contract(address=contract_address, abi=contract_abi)
         target_contract.address = contract_address
-        return target_contract.eventFilter('VerifyAndSettle', {'fromBlock': 'latest', 'toBlock': 'latest'})
+        return target_contract.events.VerifyAndSettle.createFilter(fromBlock='latest')
+        # return target_contract.eventFilter('VerifyAndSettle', {'fromBlock': 'latest', 'toBlock': 'latest'})
 
     def get_abi_for_contract(self, contract_address):
         """
