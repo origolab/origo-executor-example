@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "bn.js": "^5.0.0",
-    "node-forge": "^0.9.1",
+    "node-forge": "^1.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "^3.3.0",
